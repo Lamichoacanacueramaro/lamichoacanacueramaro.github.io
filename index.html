@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La Michoacana | Productos y precios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;700;800&display=swap">
+<style>
+:root{--rojo:#D91E36;--amarillo:#FFC93C;--bg:#FFF8EC;--card:#FFFFFF;--ink:#3A1F1A;--muted:#7A5A52;--line:#F1DFC6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2A1412;--card:#3B2020;--ink:#FFF1DD;--muted:#E3BFB2;--line:#5A3430;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#2A1412;--card:#3B2020;--ink:#FFF1DD;--muted:#E3BFB2;--line:#5A3430;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito",system-ui,sans-serif;line-height:1.5}
+h1,h2,h3{font-family:"Lilita One","Arial Rounded MT Bold",system-ui,sans-serif;font-weight:400;margin:0}
+.aviso{background:var(--amarillo);color:#3A1F1A;text-align:center;font-size:.85rem;font-weight:700;padding:.4rem 1rem}
+.top{background:var(--rojo);color:#fff;text-align:center;padding:1.5rem 1rem 3.2rem;position:relative}
+.logo{width:112px;height:112px;margin:0 auto .6rem;border-radius:50%;background:var(--amarillo);border:5px solid #fff;display:grid;place-items:center;color:var(--rojo)}
+.logo svg{width:64px;height:64px}
+.top h1{font-size:clamp(2.2rem,9vw,3.4rem);line-height:1.05;letter-spacing:.5px}
+.top p{margin:.3rem 0 0;font-weight:700;opacity:.95}
+.drip{position:absolute;left:0;bottom:-1px;width:100%;height:36px;display:block}
+.drip path{fill:var(--bg)}
+main{max-width:980px;margin:0 auto;padding:0 1rem 2rem}
+h2{font-size:1.7rem;margin:1.2rem 0 .6rem;color:var(--rojo)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) h2{color:var(--amarillo)}}
+:root[data-theme="dark"] h2{color:var(--amarillo)}
+.chips{display:flex;gap:.5rem;overflow-x:auto;padding:.2rem 0 .8rem;margin:0 -1rem;padding-inline:1rem;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:2px solid var(--rojo);background:transparent;color:var(--rojo);font:800 .95rem "Nunito",sans-serif;padding:.45rem 1rem;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--rojo);color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip{border-color:var(--amarillo);color:var(--amarillo)}:root:not([data-theme="light"]) .chip[aria-pressed="true"]{background:var(--amarillo);color:#3A1F1A}}
+:root[data-theme="dark"] .chip{border-color:var(--amarillo);color:var(--amarillo)}
+:root[data-theme="dark"] .chip[aria-pressed="true"]{background:var(--amarillo);color:#3A1F1A}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
+@media (min-width:640px){.grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}}
+.card{background:var(--card);border:2px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
+.pic{background:var(--c);display:grid;place-items:center;aspect-ratio:4/3;color:rgba(255,255,255,.92)}
+.pic svg{width:46%;height:auto;transform:rotate(-12deg)}
+.info{padding:.7rem .8rem .9rem;display:flex;flex-direction:column;gap:.2rem;flex:1}
+.info h3{font-size:1.15rem;line-height:1.15}
+.info p{margin:0;font-size:.85rem;color:var(--muted);flex:1}
+.precio{align-self:flex-start;margin-top:.4rem;background:var(--amarillo);color:#3A1F1A;font:800 1.05rem "Nunito",sans-serif;padding:.15rem .75rem;border-radius:999px}
+.bloque{background:var(--card);border:2px solid var(--line);border-radius:24px;padding:1rem;margin-top:.8rem}
+.mapa{height:140px;border-radius:16px;margin-bottom:.8rem;display:grid;place-items:center;color:var(--muted);font-weight:700;background:repeating-linear-gradient(45deg,var(--line) 0 12px,transparent 12px 24px)}
+.dato{margin:.2rem 0}
+.btns{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.8rem}
+.btn{display:inline-block;text-decoration:none;font:800 1rem "Nunito",sans-serif;padding:.7rem 1.2rem;border-radius:999px;background:var(--rojo);color:#fff;transition:transform .15s}
+.btn:hover{transform:scale(1.04)}
+.btn.verde{background:#128C4A}
+a:focus-visible,button:focus-visible{outline:3px solid var(--amarillo);outline-offset:2px}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:1rem 1rem 2rem}
+</style>
+</head>
+<body>
+<div class="aviso">Versión de prueba: productos y precios de ejemplo</div>
+
+<header class="top">
+  <div class="logo" role="img" aria-label="Espacio para el logo de La Michoacana">
+    <svg viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><use href="#paleta"/></svg>
+  </div>
+  <h1>La Michoacana</h1>
+  <p>Paletas, helados y aguas frescas</p>
+  <svg class="drip" viewBox="0 0 400 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 L0,14 C30,14 30,34 60,34 C90,34 90,10 130,10 C170,10 170,30 200,30 C230,30 230,12 270,12 C310,12 310,36 340,36 C370,36 370,16 400,16 L400,40 Z"/></svg>
+</header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="paleta" viewBox="0 0 64 64"><path d="M32 4c-9 0-15 6-15 15v19c0 6 4 10 8 10h14c4 0 8-4 8-10V19c0-9-6-15-15-15z"/><rect x="28" y="46" width="8" height="15" rx="4"/></symbol>
+</svg>
+
+<main>
+  <h2>Nuestros productos</h2>
+  <div class="chips" id="chips" role="group" aria-label="Filtrar por categoría"></div>
+  <div class="grid" id="grid"></div>
+
+  <h2>¿Dónde estamos?</h2>
+  <section class="bloque">
+    <div class="mapa">Aquí va el mapa</div>
+    <p class="dato"><strong>Dirección:</strong> Calle Ejemplo 123, Colonia Centro</p>
+    <p class="dato"><strong>Horario:</strong> Todos los días, de 10:00 a 21:00</p>
+    <div class="btns">
+      <a class="btn" href="https://maps.google.com/" target="_blank" rel="noopener">Cómo llegar</a>
+      <a class="btn verde" href="https://wa.me/520000000000" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    </div>
+  </section>
+</main>
+<footer>© La Michoacana. Los precios pueden cambiar.</footer>
+
+<script>
+var PRODUCTOS=[
+ {c:"Paletas de agua",n:"Limón",d:"Fresca y con un toque ácido.",p:12,k:"#2BB673"},
+ {c:"Paletas de agua",n:"Mango con chile",d:"Dulce, picosita y muy pedida.",p:18,k:"#FF9F1C"},
+ {c:"Paletas de agua",n:"Sandía",d:"Con trocitos de fruta.",p:12,k:"#FF4D6D"},
+ {c:"Paletas de crema",n:"Fresa con crema",d:"Cremosa, con fresa natural.",p:15,k:"#FF6F91"},
+ {c:"Paletas de crema",n:"Nuez",d:"Con nuez picada.",p:16,k:"#B07A4F"},
+ {c:"Helados",n:"Vainilla",d:"Bola de helado artesanal.",p:20,k:"#E8B04A"},
+ {c:"Helados",n:"Chocolate",d:"Intenso y cremoso.",p:20,k:"#7B4B3A"},
+ {c:"Bebidas",n:"Agua fresca 1 L",d:"Jamaica, horchata o limón.",p:35,k:"#D91E36"},
+ {c:"Postres",n:"Fresas con crema",d:"Vaso grande con fruta fresca.",p:45,k:"#FF6F91"},
+ {c:"Postres",n:"Mangonada",d:"Mango, chamoy y chile en polvo.",p:50,k:"#FF9F1C"}
+];
+var cats=["Todo"].concat(PRODUCTOS.map(function(x){return x.c}).filter(function(v,i,a){return a.indexOf(v)===i}));
+var sel="Todo",chips=document.getElementById("chips"),grid=document.getElementById("grid");
+function pintar(){
+  chips.innerHTML=cats.map(function(c){return '<button class="chip" aria-pressed="'+(c===sel)+'" data-c="'+c+'">'+c+'</button>'}).join("");
+  grid.innerHTML=PRODUCTOS.filter(function(x){return sel==="Todo"||x.c===sel}).map(function(x){
+    return '<article class="card"><div class="pic" style="--c:'+x.k+'"><svg viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><use href="#paleta"/></svg></div><div class="info"><h3>'+x.n+'</h3><p>'+x.d+'</p><span class="precio">$'+x.p+'</span></div></article>';
+  }).join("");
+}
+chips.addEventListener("click",function(e){var b=e.target.closest("button");if(b){sel=b.dataset.c;pintar()}});
+pintar();
+</script>
+</body>
+</html>
